@@ -1,0 +1,18 @@
+function findSum(arr, value) {
+   arr.sort((a,b) => a-b)
+   let start = 0
+   let end = arr.length-1
+   while(start < end) {
+   		let sum =  arr[start] + arr[end]
+      if( sum > value)
+      	end--;
+      else if(sum < value)
+          start++
+       else 
+          return [arr[start], arr[end]]
+   }
+   return false
+}
+let arr = [1, 21,3,14,5,60,7,6]
+let value = 81
+console.log(findSum(arr, value))
