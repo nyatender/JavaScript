@@ -1,0 +1,13 @@
+Q.8 Array of Products of All Elements :
+Given an array, return an array where each index stores the product of all numbers in the array except the number at the index itself.
+
+
+function findProduct(arr) {
+    var prod=1;
+    let newarr=[]
+    for(var i=0;i<arr.length;i++){
+       prod = prod*arr[i]
+    }
+    newarr = arr.map((i)=>prod/i)
+    return newarr;
+}

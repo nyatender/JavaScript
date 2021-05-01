@@ -1,0 +1,32 @@
+modified merge two sorted array
+
+function mergearr(arr1,arr2) {
+ let mergearr=[];
+ let i =0 , j=0;
+ while(i<arr1.length && j<arr2.length){
+   if(arr1[i]<arr2[j]){
+    mergearr.push(arr1[i])
+    i++;
+   }
+   else{
+     mergearr.push(arr2[j])
+     j++;
+   }
+ }
+ if(i==arr1.length && j !== arr2.length){
+  const remarr = arr2.slice(j)
+  mergearr = [...mergearr,...remarr]
+ }
+ if(i!==arr1.length && j == arr2.length){
+  const remarr = arr1.slice(i)
+  mergearr = [...mergearr,...remarr]
+ }
+ return mergearr;
+}
+
+
+
+var arr1 = [1,3,4,11,12]
+var arr2=[5,6,9,10]
+
+console.log(mergearr(arr1,arr2))

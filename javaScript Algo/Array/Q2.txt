@@ -1,0 +1,21 @@
+q.2  Sort Array in Max/min Form : Arrange elements in such a way that the maximum element appears at first, then minimum at second, then second maximum at third position and second minimum at fourth, and so on.
+
+function maxMin(arr){
+  var i = 0;
+  let temparr = [];
+  var j = arr.length-1;
+  while(i<=j){
+    if(i==j){
+      temparr.push(arr[i])
+      break;
+    }
+    let max = arr[j]
+    temparr.push(max);
+    let min = arr[i]
+    temparr.push(min);
+    i++;
+    j--;
+
+  }
+  return temparr;
+}

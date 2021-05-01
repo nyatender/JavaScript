@@ -1,0 +1,23 @@
+modified find first unique
+
+function findFirstUnique(arr) {
+   let uniquenum=null;
+   let obj={}
+   let uniqueVal=null;
+   for(var i in arr){
+      let val = arr[i]
+      if(!obj[val]){
+        obj[val] = i
+      }else{
+        delete obj[val]
+      }
+   }
+   uniquenum = Object.keys(obj).filter((i)=>obj[i] == "0")
+   return parseInt(uniquenum[0]);
+}
+
+
+
+var arr = [9,3,3,4,5,1,1]
+
+console.log(findFirstUnique(arr))

@@ -1,0 +1,24 @@
+Q.6 Find First Unique integrer in array
+
+function findFirstUnique(arr) {
+   let uniquenum=null;
+   let obj={}
+
+   for(var i in arr){
+      let val = arr[i]
+      if(!obj[val]){
+        obj[val] = i
+      }else{
+        delete obj[val]
+      }
+   }
+   console.log(obj)
+   let max =  Number.MAX_SAFE_INTEGER
+    for(var [key,value] of Object.entries(obj)){
+        if(parseInt(value)<max){
+            max=parseInt(value)
+            uniquenum = parseInt(key)
+        }
+    }
+   return uniquenum;
+}

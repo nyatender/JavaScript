@@ -1,0 +1,24 @@
+q. 9 Find Two Numbers that Add up to "value"
+Given an array and a number "value", find two numbers from the array that sum to 'value'. Implement your solution in JavaScript and see if your output matches with the correct output.
+
+function findSum(arr,value){
+     arr.sort((a,b)=>a-b)
+
+      let i = 0;
+      let  j = arr.length - 1;
+      let  sum = 0;
+
+    while (i != j) {
+        sum = arr[i] + arr[j]
+
+        if (sum < value) {
+            i++;
+        } else if (sum > value) {
+            j--;
+        } else {
+            return [arr[i],arr[j]];
+
+        }
+    }
+  return false;
+}

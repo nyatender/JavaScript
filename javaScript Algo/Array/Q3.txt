@@ -1,0 +1,26 @@
+Q,3 Rearrange value in array : A sorted array with negative elements at the left and positive elements at the right
+
+
+function reArrange(arr) {
+    var i =0;
+    var j = arr.length-1;
+    let temp;
+    console.log("input: " + arr);
+    while(i<j){
+      while(i < arr.length-1 && arr[i]<0){
+        i++;
+      }
+      while(j >= 0 && arr[j] >= 0){
+         j--;
+      }
+      console.log(arr);
+      if(i<j){
+        temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+      }
+      console.log("after swap");
+      console.log(arr);
+    }
+    return arr;
+}

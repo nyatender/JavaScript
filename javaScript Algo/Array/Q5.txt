@@ -1,0 +1,18 @@
+q.5 Find Second Max Number in array.
+
+function findSecondMaximum(arr) {
+    let Max= Number.MIN_SAFE_INTEGER;
+    let SecMax=Number.MIN_SAFE_INTEGER;
+    for(var i =0 ;i<arr.length;i++){
+        if(Max<arr[i]){
+            SecMax=Max;
+            Max = arr[i]
+           
+        }else{
+            if(SecMax < arr[i] && arr[i] != Max)
+            SecMax=arr[i]
+        }
+       
+    }
+    return SecMax;
+}

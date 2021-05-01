@@ -1,0 +1,9 @@
+q.4 Right Rotate an Array by n
+
+function rightRotate(arr,n){
+  for(var i=0 ; i<n;i++){
+    let val = arr.splice(arr.length-1,1)
+    arr.unshift(val)
+  }
+  return arr;
+}

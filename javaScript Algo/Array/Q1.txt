@@ -1,0 +1,21 @@
+Q.Find Maximum Sum of Subarray , array can have -ve and +ve integers
+
+let findMaxSumSubArray = function(A) {
+   if(A.length <1){
+     return 0;
+   }
+   let globalMax = A[0]
+   let localMax = A[0]
+   for(var i =0;i<A.length;i++){
+     if(localMax < 0){
+       localMax = A[i];      
+     }else{
+       localMax = localMax + A[i]
+     }
+     if(localMax > globalMax){
+      globalMax = localMax;
+     }
+   }
+
+  return globalMax;
+};
